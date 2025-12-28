@@ -15,13 +15,14 @@
             --text-dark: #2a0b1f;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
             color: var(--text-dark);
             overflow-x: hidden;
             position: relative;
+            max-width: 100vw;
         }
         body::before {
             content: "";
@@ -63,6 +64,7 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 40px;
+            width: 100%;
         }
         .navbar-content {
             display: flex;
@@ -123,6 +125,8 @@
             color: var(--dark-purple);
             margin-bottom: 15px;
             text-shadow: 0 2px 20px rgba(255, 73, 193, 0.3);
+            word-wrap: break-word;
+            max-width: 100%;
         }
         .hero-portfolio .subtitle {
             font-family: 'Caveat', cursive;
@@ -314,35 +318,56 @@
 
         /* 📱 MOBILE (max-width: 640px) */
         @media (max-width: 640px) {
-            .navbar-container { padding: 0 20px; }
-            .logo-text { font-size: 1.1rem; }
-            .logo-image { width: 40px; height: 40px; }
-            .back-btn { padding: 9px 20px; font-size: 0.85rem; }
+            body { padding: 0; margin: 0; }
             
-            .hero-portfolio { padding: 0 20px; margin: 40px auto 25px; }
-            .hero-portfolio h1 { font-size: 2rem; }
-            .hero-portfolio .subtitle { font-size: 1.3rem; margin-bottom: 15px; }
-            .hero-portfolio p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px; }
+            .navbar-container { padding: 0 15px; }
+            .logo-text { font-size: 1rem; }
+            .logo-image { width: 38px; height: 38px; }
+            .back-btn { padding: 8px 18px; font-size: 0.8rem; }
             
-            .filter-buttons { gap: 10px; margin-bottom: 40px; }
-            .filter-btn { padding: 10px 20px; font-size: 0.85rem; }
+            .hero-portfolio { padding: 0 15px; margin: 30px auto 20px; }
+            .hero-portfolio h1 { 
+                font-size: 1.75rem; 
+                line-height: 1.2;
+                margin-bottom: 12px;
+            }
+            .hero-portfolio .subtitle { 
+                font-size: 1.2rem; 
+                margin-bottom: 12px; 
+            }
+            .hero-portfolio p { 
+                font-size: 0.9rem; 
+                line-height: 1.6; 
+                margin-bottom: 25px;
+                padding: 0 5px;
+            }
+            
+            .filter-buttons { 
+                gap: 8px; 
+                margin-bottom: 35px;
+                padding: 0 10px;
+            }
+            .filter-btn { 
+                padding: 9px 18px; 
+                font-size: 0.8rem; 
+            }
             
             .portfolio-grid {
-                padding: 0 20px;
+                padding: 0 15px;
                 grid-template-columns: 1fr;
-                gap: 20px;
-                margin-bottom: 50px;
+                gap: 18px;
+                margin-bottom: 45px;
             }
             
             .portfolio-item { border-radius: 15px; }
-            .portfolio-overlay { padding: 20px; }
-            .portfolio-title { font-size: 1.15rem; }
-            .portfolio-category { font-size: 0.85rem; }
+            .portfolio-overlay { padding: 18px; }
+            .portfolio-title { font-size: 1.1rem; }
+            .portfolio-category { font-size: 0.8rem; }
             
-            footer { padding: 30px 15px; margin-top: 60px; }
-            footer p { font-size: 0.9rem; }
+            footer { padding: 25px 15px; margin-top: 50px; }
+            footer p { font-size: 0.85rem; line-height: 1.6; }
             
-            .glow { width: 250px; height: 250px; filter: blur(70px); }
+            .glow { width: 220px; height: 220px; filter: blur(60px); }
         }
 
         /* 📱 EXTRA SMALL MOBILE (max-width: 400px) */

@@ -22,7 +22,8 @@
         }
 
         html { 
-            scroll-behavior: smooth; 
+            scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         body {
@@ -31,6 +32,7 @@
             color: var(--text-dark);
             overflow-x: hidden;
             position: relative;
+            max-width: 100vw;
         }
 
         body::before {
@@ -843,82 +845,116 @@
 
         /* 📱 MOBILE (max-width: 640px) */
         @media (max-width: 640px) {
-            .top-banner { font-size: 0.8rem; padding: 10px 15px; }
+            body { padding: 0; margin: 0; }
             
-            .logo-text { font-size: 1.1rem; }
-            .logo-image { width: 40px; height: 40px; }
+            .top-banner { font-size: 0.75rem; padding: 8px 12px; }
             
-            .hero { padding: 0 20px 50px; margin-top: 25px; }
-            .hero-content { padding: 70px 25px 35px; border-radius: 25px; }
-            .hero-text h1 { font-size: 1.8rem; }
-            .hero-text .handwriting { font-size: 1.1rem; }
-            .hero-text p { font-size: 0.9rem; }
+            .logo-text { font-size: 1rem; }
+            .logo-image { width: 38px; height: 38px; }
+            
+            .hero { padding: 0 15px 45px; margin-top: 20px; }
+            .hero-content { padding: 65px 20px 30px; border-radius: 22px; }
+            .hero-text h1 { 
+                font-size: 1.6rem; 
+                line-height: 1.3;
+                word-wrap: break-word;
+            }
+            .hero-text .handwriting { font-size: 1rem; }
+            .hero-text p { 
+                font-size: 0.85rem;
+                line-height: 1.6;
+                padding: 0 5px;
+            }
             .hero-badge-left, .hero-badge-right { 
-                width: 65px; 
-                height: 65px; 
-                font-size: 0.55rem; 
-                padding: 10px;
+                width: 60px; 
+                height: 60px; 
+                font-size: 0.5rem; 
+                padding: 8px;
             }
-            .hero-badge-left { top: 15px; left: 15px; }
-            .hero-badge-right { top: 15px; right: 15px; }
+            .hero-badge-left { top: 12px; left: 12px; }
+            .hero-badge-right { top: 12px; right: 12px; }
             
-            .services-section { padding: 35px 20px; margin: 60px auto; }
-            .services-header { margin-bottom: 40px; }
-            .services-header h2 { font-size: 1.8rem; }
-            .service-card { padding: 40px 25px; border-radius: 25px; }
-            .service-badge { width: 65px; height: 65px; font-size: 1.6rem; top: -12px; }
-            .service-card h3 { font-size: 1.2rem; margin: 25px 0 12px; }
-            .service-card h4 { font-size: 1.3rem; }
-            .service-card p { font-size: 0.9rem; margin-bottom: 20px; }
-            .service-cta { padding: 11px 25px; font-size: 0.9rem; }
+            .services-section { padding: 30px 15px; margin: 50px auto; }
+            .services-header { margin-bottom: 35px; }
+            .services-header h2 { 
+                font-size: 1.6rem; 
+                line-height: 1.3;
+                padding: 0 5px;
+            }
+            .service-card { padding: 38px 20px; border-radius: 22px; }
+            .service-badge { width: 62px; height: 62px; font-size: 1.5rem; top: -11px; }
+            .service-card h3 { font-size: 1.1rem; margin: 22px 0 10px; }
+            .service-card h4 { font-size: 1.2rem; }
+            .service-card p { font-size: 0.85rem; margin-bottom: 18px; line-height: 1.6; }
+            .service-cta { padding: 10px 22px; font-size: 0.85rem; }
             
-            .content-section { padding: 0 20px; margin: 50px auto; }
-            .content-bubble { padding: 35px 25px; border-radius: 30px; }
-            .content-bubble h2 { font-size: 1.7rem; }
-            .content-bubble .handwriting { font-size: 1.3rem; }
-            .content-text p { font-size: 0.95rem; line-height: 1.8; }
-            .content-image { height: 250px; border-radius: 20px; }
+            .content-section { padding: 0 15px; margin: 45px auto; }
+            .content-bubble { padding: 30px 20px; border-radius: 25px; }
+            .content-bubble h2 { 
+                font-size: 1.5rem; 
+                line-height: 1.3;
+            }
+            .content-bubble .handwriting { font-size: 1.2rem; }
+            .content-text p { font-size: 0.9rem; line-height: 1.7; }
+            .content-image { height: 230px; border-radius: 18px; }
             .content-sticker { 
-                width: 80px; 
-                height: 100px; 
-                font-size: 0.75rem; 
-                padding: 12px;
-                top: -15px;
-                left: -15px;
+                width: 75px; 
+                height: 95px; 
+                font-size: 0.7rem; 
+                padding: 10px;
+                top: -12px;
+                left: -12px;
             }
             
-            .about-section { padding: 35px 20px; margin: 60px auto; }
-            .about-content { padding: 30px 25px; border-radius: 25px; }
-            .about-greeting { padding: 10px 22px; font-size: 1.1rem; }
-            .about-content h2 { font-size: 1.6rem; }
-            .about-content p { font-size: 0.95rem; line-height: 1.8; }
-            .about-image { height: 300px; border-radius: 25px; }
+            .about-section { padding: 30px 15px; margin: 50px auto; }
+            .about-content { padding: 28px 20px; border-radius: 22px; }
+            .about-greeting { padding: 9px 20px; font-size: 1rem; }
+            .about-content h2 { font-size: 1.5rem; }
+            .about-content p { font-size: 0.9rem; line-height: 1.7; }
+            .about-image { height: 280px; border-radius: 22px; }
             .about-label { 
-                font-size: 1.2rem; 
-                padding: 8px 15px; 
+                font-size: 1.1rem; 
+                padding: 7px 13px; 
                 top: -15px;
                 left: -15px;
             }
             
-            .contact-section { padding: 35px 20px; margin: 60px auto; }
-            .contact-container { padding: 35px 25px; border-radius: 30px; }
-            .contact-container h2 { font-size: 2rem; }
-            .contact-container p { font-size: 1rem; margin-bottom: 35px; }
-            .contact-logos { gap: 30px; }
-            .contact-logo-link img { width: 55px; height: 55px; }
+            .contact-section { padding: 30px 15px; margin: 50px auto; }
+            .contact-container { padding: 32px 20px; border-radius: 25px; }
+            .contact-container h2 { 
+                font-size: 1.8rem;
+                line-height: 1.3;
+            }
+            .contact-container p { 
+                font-size: 0.95rem; 
+                margin-bottom: 32px;
+                line-height: 1.6;
+                padding: 0 5px;
+            }
+            .contact-logos { gap: 28px; }
+            .contact-logo-link img { width: 52px; height: 52px; }
             
-            .cv-section { padding: 35px 20px; margin: 60px auto; }
-            .cv-container { padding: 35px 25px; border-radius: 30px; }
-            .cv-container h2 { font-size: 2rem; }
-            .cv-container p { font-size: 0.95rem; margin-bottom: 30px; }
-            .cv-download-btn { padding: 14px 35px; font-size: 1rem; }
+            .cv-section { padding: 30px 15px; margin: 50px auto; }
+            .cv-container { padding: 32px 20px; border-radius: 25px; }
+            .cv-container h2 { font-size: 1.8rem; }
+            .cv-container p { 
+                font-size: 0.9rem; 
+                margin-bottom: 28px;
+                line-height: 1.6;
+                padding: 0 5px;
+            }
+            .cv-download-btn { padding: 13px 32px; font-size: 0.95rem; }
             
-            footer { padding: 30px 15px; margin-top: 60px; }
-            footer p { font-size: 0.9rem; }
+            footer { padding: 28px 15px; margin-top: 55px; }
+            footer p { 
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
             
-            .glow { width: 250px; height: 250px; filter: blur(70px); }
+            .glow { width: 220px; height: 220px; filter: blur(60px); }
             .glow.cream, .glow.cream-two, .glow.cream-three { 
-                width: 280px; 
+                width: 260px; 
+                height: 260px; 
                 height: 280px; 
                 filter: blur(50px); 
             }
