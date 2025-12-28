@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Design & Photo Portfolio - Ocha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FFF7AD;
+            --soft-pink: #FFB3AE;
+            --hot-pink: #FF49C1;
+            --magenta: #6A1452;
+            --dark-purple: #4A113E;
+            --text-dark: #2a0b1f;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: linear-gradient(135deg, var(--cream), var(--soft-pink), var(--hot-pink), var(--magenta), var(--dark-purple));
+            background-size: 300% 300%;
+            animation: bgMove 18s ease infinite;
+        }
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glow {
+            position: fixed;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            filter: blur(90px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: floatGlow 14s infinite alternate ease-in-out;
+        }
+        .glow.one { background: #6A1452; top: 10%; left: 10%; }
+        .glow.two { background: #FF49C1; bottom: 10%; right: 10%; animation-delay: 3s; }
+        @keyframes floatGlow { from { transform: translateY(0); } to { transform: translateY(-60px); } }
+        
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, rgba(74, 17, 62, 0.95) 0%, rgba(106, 20, 82, 0.95) 50%, rgba(255, 247, 173, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        }
+        .navbar-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .logo-text {
+            color: white;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .back-btn {
+            background: var(--cream);
+            color: var(--dark-purple);
+            padding: 10px 30px;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 247, 173, 0.4);
+        }
+        .back-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 25px rgba(255, 247, 173, 0.6);
+        }
+
+        .hero-portfolio {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 60px auto 40px;
+            padding: 0 40px;
+            text-align: center;
+        }
+        .hero-portfolio h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--dark-purple);
+            margin-bottom: 15px;
+            text-shadow: 0 2px 20px rgba(255, 73, 193, 0.3);
+        }
+        .hero-portfolio .subtitle {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: var(--hot-pink);
+            margin-bottom: 20px;
+        }
+        .hero-portfolio p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-dark);
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--magenta);
+            color: var(--magenta);
+            padding: 12px 28px;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--hot-pink);
+            color: white;
+            border-color: var(--hot-pink);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255, 73, 193, 0.4);
+        }
+
+        .portfolio-grid {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto 80px;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .portfolio-item {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(255, 73, 193, 0.3);
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s ease;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(106, 20, 82, 0.95), transparent 70%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .portfolio-title {
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        .portfolio-category {
+            color: var(--cream);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.1s;
+        }
+        .portfolio-item:hover .portfolio-title,
+        .portfolio-item:hover .portfolio-category {
+            transform: translateY(0);
+        }
+
+        /* Modal Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 20px 80px rgba(255, 73, 193, 0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: var(--hot-pink);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .lightbox-close:hover {
+            transform: rotate(90deg) scale(1.1);
+            background: var(--magenta);
+        }
+
+        footer {
+            position: relative;
+            z-index: 2;
+            background: var(--dark-purple);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+        footer p {
+            margin: 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-portfolio h1 { font-size: 2.5rem; }
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            .filter-buttons {
+                gap: 10px;
+            }
+            .filter-btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+    
+    <script>
+        // Dynamic base path detection
+        const getBasePath = () => {
+            const path = window.location.pathname;
+            // If accessed via /public/ folder directly
+            if (path.includes('/public/')) {
+                return path.split('/public/')[0] + '/public';
+            }
+            // If using php artisan serve or proper Laravel setup
+            return '';
+        };
+        
+        const basePath = getBasePath();
+        console.log('Base Path:', basePath);
+        console.log('Current URL:', window.location.href);
+    </script>
+</head>
+<body>
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-content">
+                <a href="{{ url('/') }}" class="navbar-logo">
+                    <div class="logo-image">
+                        <img src="{{ asset('images/logonavbar.png') }}" alt="Logo" onerror="console.error('Logo failed:', this.src); this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2250%22 height=%2250%22%3E%3Ctext y=%2230%22 font-size=%2230%22%3E🎨%3C/text%3E%3C/svg%3E'">
+                    </div>
+                    <div class="logo-text">Portfolio Ocha</div>
+                </a>
+                <a href="{{ url('/') }}" class="back-btn">← BACK TO HOME</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-portfolio">
+        <h1>🎨 Design & Photo Portfolio</h1>
+        <p class="subtitle">Visual stories crafted with creativity & purpose</p>
+        <p>A curated collection of my graphic design work, photography, and visual content created for brands, social media, and personal projects.</p>
+    </section>
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">ALL WORK</button>
+        <button class="filter-btn" data-filter="poster">Poster Design</button>
+        <button class="filter-btn" data-filter="social">Social Media</button>
+        <button class="filter-btn" data-filter="photo">Photography</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+        @php
+            $portfolioItems = [
+                ['id' => 1, 'category' => 'poster', 'file' => 'design1.png', 'title' => 'Event Poster Design', 'cat_name' => 'Poster Design'],
+                ['id' => 2, 'category' => 'social', 'file' => 'design2.png', 'title' => 'Instagram Feed Layout', 'cat_name' => 'Social Media'],
+                ['id' => 3, 'category' => 'photo', 'file' => 'design3.jpg', 'title' => 'Product Photography', 'cat_name' => 'Photography'],
+                ['id' => 4, 'category' => 'branding', 'file' => 'design4.png', 'title' => 'Brand Identity Design', 'cat_name' => 'Branding'],
+                ['id' => 5, 'category' => 'social', 'file' => 'design5.png', 'title' => 'Social Media Campaign', 'cat_name' => 'Social Media'],
+                ['id' => 6, 'category' => 'poster', 'file' => 'design6.jpg', 'title' => 'Concert Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 7, 'category' => 'photo', 'file' => 'design7.jpg', 'title' => 'Portrait Session', 'cat_name' => 'Photography'],
+                ['id' => 8, 'category' => 'branding', 'file' => 'design8.png', 'title' => 'Logo & Branding Kit', 'cat_name' => 'Branding'],
+                ['id' => 9, 'category' => 'social', 'file' => 'design9.png', 'title' => 'Instagram Story Template', 'cat_name' => 'Social Media'],
+                ['id' => 10, 'category' => 'photo', 'file' => 'design10.jpg', 'title' => 'Landscape Photography', 'cat_name' => 'Photography'],
+                ['id' => 11, 'category' => 'photo', 'file' => 'design11.jpg', 'title' => 'Street Photography', 'cat_name' => 'Photography'],
+                ['id' => 12, 'category' => 'photo', 'file' => 'design12.jpg', 'title' => 'Architecture Photography', 'cat_name' => 'Photography'],
+                ['id' => 13, 'category' => 'photo', 'file' => 'design13.jpg', 'title' => 'Nature Photography', 'cat_name' => 'Photography'],
+                ['id' => 14, 'category' => 'photo', 'file' => 'design14.jpg', 'title' => 'Urban Photography', 'cat_name' => 'Photography'],
+                ['id' => 15, 'category' => 'photo', 'file' => 'design15.jpg', 'title' => 'Lifestyle Photography', 'cat_name' => 'Photography'],
+                ['id' => 16, 'category' => 'photo', 'file' => 'design16.jpg', 'title' => 'Event Photography', 'cat_name' => 'Photography'],
+                ['id' => 17, 'category' => 'photo', 'file' => 'design17.jpg', 'title' => 'Fashion Photography', 'cat_name' => 'Photography'],
+                ['id' => 18, 'category' => 'photo', 'file' => 'design18.jpg', 'title' => 'Food Photography', 'cat_name' => 'Photography'],
+                ['id' => 19, 'category' => 'photo', 'file' => 'design19.jpg', 'title' => 'Travel Photography', 'cat_name' => 'Photography'],
+                ['id' => 20, 'category' => 'poster', 'file' => 'design20.png', 'title' => 'Music Festival Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 21, 'category' => 'poster', 'file' => 'design21.png', 'title' => 'Movie Poster Design', 'cat_name' => 'Poster Design'],
+                ['id' => 22, 'category' => 'poster', 'file' => 'design22.png', 'title' => 'Exhibition Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 23, 'category' => 'poster', 'file' => 'design23.png', 'title' => 'Concert Tour Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 24, 'category' => 'poster', 'file' => 'design24.png', 'title' => 'Sports Event Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 25, 'category' => 'poster', 'file' => 'design25.png', 'title' => 'Workshop Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 26, 'category' => 'poster', 'file' => 'design26.png', 'title' => 'Campaign Poster', 'cat_name' => 'Poster Design'],
+            ];
+        @endphp
+
+        @foreach($portfolioItems as $item)
+        <div class="portfolio-item" data-category="{{ $item['category'] }}">
+            <img src="{{ asset('images/portfolio/photo/' . $item['file']) }}" 
+                 alt="Design {{ $item['id'] }}"
+                 onerror="console.error('Image failed to load:', this.src); this.style.backgroundColor='#f0f0f0'; this.alt='Image not found: {{ $item['file'] }}';">
+            <div class="portfolio-overlay">
+                <div class="portfolio-title">{{ $item['title'] }}</div>
+                <div class="portfolio-category">{{ $item['cat_name'] }}</div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <img id="lightboxImg" src="" alt="Portfolio">
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>✨ Let's create something beautiful together!</strong></p>
+        <p>📧 ocha.della@gmail.com | 📱 +62 812-3456-7890</p>
+        <p>© 2025 Ocha Della - Graphic Designer & Informatika Student</p>
+    </footer>
+
+    <script>
+        console.log('=== DEBUGGING INFO ===');
+        console.log('Current URL:', window.location.href);
+        console.log('Base URL:', '{{ url("/") }}');
+        console.log('Asset URL:', '{{ asset("images/portfolio/photo/design1.png") }}');
+        console.log('Public Path:', '{{ public_path("images/portfolio/photo/design1.png") }}');
+        @if(file_exists(public_path('images/portfolio/photo/design1.png')))
+            console.log('✅ File EXISTS in public folder');
+        @else
+            console.error('❌ File NOT FOUND in public folder');
+        @endif
+        
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.getAttribute('data-filter');
+                
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Filter items
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').src;
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox with ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+        
+        // Log all image load errors
+        document.querySelectorAll('.portfolio-item img').forEach((img, index) => {
+            img.addEventListener('error', function() {
+                console.error(`❌ Image ${index + 1} failed:`, this.src);
+            });
+            img.addEventListener('load', function() {
+                console.log(`✅ Image ${index + 1} loaded:`, this.src);
+            });
+        });
+    </script>
+</body>
+</html>
