@@ -24,6 +24,7 @@
         html { 
             scroll-behavior: smooth;
             overflow-x: hidden;
+            color-scheme: light;
         }
 
         body {
@@ -228,14 +229,17 @@
         }
 
         .navbar-cta { 
-            background: var(--cream); 
-            color: var(--dark-purple); 
+            background: linear-gradient(90deg, #FFF7AD, #FFE68A); 
+            color: #1c0a13; 
             padding: 10px 24px; 
             border-radius: 999px; 
-            font-weight: 700; 
+            font-weight: 800; 
             text-decoration: none; 
             transition: all 0.3s ease; 
-            box-shadow: 0 4px 15px rgba(255, 247, 173, 0.4); 
+            box-shadow: 0 4px 15px rgba(255, 247, 173, 0.45); 
+            border: 2px solid rgba(74, 17, 62, 0.35); 
+            text-shadow: none; 
+            filter: saturate(1.05) contrast(1.12); 
         }
 
         .navbar-cta:hover { 
@@ -247,7 +251,7 @@
             position: relative; 
             z-index: 2; 
             max-width: 1200px; 
-            margin: 40px auto 0; 
+            margin: 100px auto 0; 
             padding: 0 40px 80px; 
         }
 
@@ -262,10 +266,10 @@
 
         .hero-badge-left { 
             position: absolute; 
-            top: 30px; 
-            left: 30px; 
-            width: 120px; 
-            height: 120px; 
+            top: 8px; 
+            left: 26px; 
+            width: 90px; 
+            height: 90px; 
             background: var(--magenta); 
             border-radius: 50%; 
             display: flex; 
@@ -275,7 +279,7 @@
             font-size: 0.75rem; 
             font-weight: 700; 
             text-align: center; 
-            padding: 20px; 
+            padding: 14px; 
             transform: rotate(-15deg); 
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); 
             overflow: hidden; 
@@ -283,10 +287,10 @@
 
         .hero-badge-right { 
             position: absolute; 
-            top: 30px; 
-            right: 30px; 
-            width: 100px; 
-            height: 100px; 
+            top: 8px; 
+            right: 26px; 
+            width: 80px; 
+            height: 80px; 
             background: white; 
             border: 3px solid var(--magenta); 
             border-radius: 50%; 
@@ -297,7 +301,7 @@
             font-size: 0.7rem; 
             font-weight: 700; 
             text-align: center; 
-            padding: 15px; 
+            padding: 12px; 
             transform: rotate(10deg); 
             overflow: hidden; 
         }
@@ -490,7 +494,7 @@
 
         .content-sticker { 
             position: absolute; 
-            top: -20px; 
+            top: -50px; 
             left: -20px; 
             width: 100px; 
             height: 120px; 
@@ -781,20 +785,20 @@
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 280px;
+                width: 220px;
                 height: 100vh;
-                background: linear-gradient(180deg, var(--dark-purple), var(--magenta));
+                background: rgba(74, 17, 62, 0.92);
                 flex-direction: column;
-                padding: 100px 40px 40px;
-                gap: 30px;
+                padding: 80px 24px 24px;
+                gap: 20px;
                 transition: right 0.4s ease;
-                box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+                box-shadow: -4px 0 18px rgba(0,0,0,0.2);
             }
             .navbar-menu.active { right: 0; }
             .navbar-menu a {
-                font-size: 1.1rem;
-                padding: 15px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
+                font-size: 1rem;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
             }
             .navbar-cta {
                 margin-top: 20px;
@@ -804,13 +808,13 @@
             .navbar-container { padding: 0 25px; }
             .navbar-content { padding: 15px 0; }
             
-            .hero { padding: 0 25px 60px; margin-top: 30px; }
-            .hero-content { padding: 80px 30px 40px; border-radius: 30px; }
+            .hero { padding: 0 25px 60px; margin-top: 95px; }
+            .hero-content { padding: 100px 30px 40px; border-radius: 30px; }
             .hero-text h1 { font-size: 2.2rem; line-height: 1.3; }
             .hero-text p { font-size: 0.95rem; line-height: 1.7; }
-            .hero-badge-left, .hero-badge-right { width: 80px; height: 80px; font-size: 0.65rem; padding: 12px; }
-            .hero-badge-left { top: 20px; left: 20px; }
-            .hero-badge-right { top: 20px; right: 20px; }
+            .hero-badge-left, .hero-badge-right { width: 56px; height: 68px; font-size: 0.55rem; padding: 8px; }
+            .hero-badge-left { top: 16px; left: 16px; }
+            .hero-badge-right { top: 16px; right: 16px; }
             
             .services-section { padding: 40px 25px; }
             .services-header h2 { font-size: 2.2rem; }
@@ -826,6 +830,14 @@
                 gap: 30px; 
             }
             .content-image { height: 300px; }
+            .content-sticker { 
+                width: 90px; 
+                height: 100px; 
+                font-size: 0.8rem; 
+                padding: 12px;
+                top: -75px;
+                left: -15px;
+            }
             
             .about-section { padding: 40px 25px; }
             .about-grid { 
@@ -846,14 +858,28 @@
         /* 📱 MOBILE (max-width: 640px) */
         @media (max-width: 640px) {
             body { padding: 0; margin: 0; }
+                        /* Minimal sidebar for mobile */
+                        .navbar-menu {
+                            width: 70%;
+                            background: rgba(74, 17, 62, 0.95);
+                            padding: 70px 20px 20px;
+                            gap: 18px;
+                        }
+                        .navbar-menu a {
+                            font-size: 0.95rem;
+                            padding: 10px 0;
+                            border-bottom: 1px solid rgba(255,255,255,0.08);
+                        }
+                        .navbar-menu .navbar-cta { align-self: flex-start; }
+                        .navbar-cta { padding: 12px 22px; font-size: 0.85rem; letter-spacing: 0.02em; }
             
             .top-banner { font-size: 0.75rem; padding: 8px 12px; }
             
             .logo-text { font-size: 1rem; }
             .logo-image { width: 38px; height: 38px; }
             
-            .hero { padding: 0 15px 45px; margin-top: 20px; }
-            .hero-content { padding: 65px 20px 30px; border-radius: 22px; }
+            .hero { padding: 0 15px 45px; margin-top: 100px;}
+            .hero-content { padding: 85px 20px 30px; border-radius: 22px; }
             .hero-text h1 { 
                 font-size: 1.6rem; 
                 line-height: 1.3;
@@ -866,13 +892,13 @@
                 padding: 0 5px;
             }
             .hero-badge-left, .hero-badge-right { 
-                width: 60px; 
-                height: 60px; 
-                font-size: 0.5rem; 
-                padding: 8px;
+                width: 8px; 
+                height: 24px; 
+                font-size: 0.32rem; 
+                padding: 3px;
             }
-            .hero-badge-left { top: 12px; left: 12px; }
-            .hero-badge-right { top: 12px; right: 12px; }
+            .hero-badge-left { top: 10px; left: 6px; }
+            .hero-badge-right { top: 10px; right: 6px; }
             
             .services-section { padding: 30px 15px; margin: 50px auto; }
             .services-header { margin-bottom: 35px; }
@@ -898,11 +924,11 @@
             .content-text p { font-size: 0.9rem; line-height: 1.7; }
             .content-image { height: 230px; border-radius: 18px; }
             .content-sticker { 
-                width: 75px; 
-                height: 95px; 
+                width: 65px; 
+                height: 80px; 
                 font-size: 0.7rem; 
                 padding: 10px;
-                top: -12px;
+                top: -65px;
                 left: -12px;
             }
             

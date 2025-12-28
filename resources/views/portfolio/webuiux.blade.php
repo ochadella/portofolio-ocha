@@ -15,7 +15,7 @@
             --text-dark: #2a0b1f;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; overflow-x: hidden; }
+        html { scroll-behavior: smooth; overflow-x: hidden; color-scheme: light; }
         body {
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
@@ -115,7 +115,7 @@
             position: relative;
             z-index: 2;
             max-width: 1400px;
-            margin: 60px auto 40px;
+            margin: 90px auto 40px;
             padding: 0 40px;
             text-align: center;
         }
@@ -323,7 +323,7 @@
             
             .back-btn { padding: 10px 25px; font-size: 0.9rem; }
             
-            .hero-portfolio { padding: 0 25px; margin: 50px auto 30px; }
+            .hero-portfolio { padding: 0 25px; margin: 70px auto 30px; }
             .hero-portfolio h1 { font-size: 2.8rem; }
             .hero-portfolio .subtitle { font-size: 1.5rem; }
             .hero-portfolio p { font-size: 1rem; }
@@ -348,7 +348,7 @@
             .logo-image { width: 38px; height: 38px; }
             .back-btn { padding: 8px 18px; font-size: 0.8rem; }
             
-            .hero-portfolio { padding: 0 15px; margin: 30px auto 20px; }
+            .hero-portfolio { padding: 0 15px; margin: 50px auto 25px; }
             .hero-portfolio h1 { 
                 font-size: 1.75rem; 
                 line-height: 1.2;
