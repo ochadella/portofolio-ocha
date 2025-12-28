@@ -1,20 +1,28 @@
 {
   "version": 2,
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": "composer install --no-dev --optimize-autoloader",
   "builds": [
     {
-      "src": "public/index.php",
+      "src": "api/index.php",
       "use": "vercel-php@0.7.1"
     }
   ],
   "routes": [
     {
+      "src": "/(css|js|images|fonts|favicon.ico|robots.txt)/(.*)",
+      "dest": "public/$1/$2"
+    },
+    {
       "src": "/(.*)",
-      "dest": "public/index.php"
+      "dest": "api/index.php"
     }
   ],
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
-    "APP_KEY": "base64:pOZL5FDEpkAolYIOWpQP279VdUbBEYP5ZYph4Ee4ALU="
+    "APP_KEY": "base64:pOZL5FDEpkAolYIOWpQP279VdUbBEYP5ZYph4Ee4ALU=",
+    "APP_URL": "https://cvportfolio-ocha.vercel.app"
   }
 }
