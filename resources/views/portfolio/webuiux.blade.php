@@ -266,40 +266,114 @@
         }
 
         .portfolio-iframe-wrapper {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: 16px;
-    position: relative;
-}
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 16px;
+            position: relative;
+        }
 
-.portfolio-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+        .portfolio-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            transform: scale(0.6);
+            transform-origin: top left;
+            width: 166.7%;
+            height: 166.7%;
+            pointer-events: none;
+        }
 
-    /* supaya tampil seperti thumbnail */
-    transform: scale(0.6);
-    transform-origin: top left;
+        /* 🎯 HAMBURGER MENU */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
 
-    width: 166.7%;
-    height: 166.7%;
-    pointer-events: none;
-}
-
-        @media (max-width: 768px) {
-            .hero-portfolio h1 { font-size: 2.5rem; }
+        /* 📱 TABLET (max-width: 968px) */
+        @media (max-width: 968px) {
+            .hamburger { display: flex; }
+            
+            .navbar-container { padding: 0 25px; }
+            .navbar-content { padding: 15px 0; }
+            
+            .back-btn { padding: 10px 25px; font-size: 0.9rem; }
+            
+            .hero-portfolio { padding: 0 25px; margin: 50px auto 30px; }
+            .hero-portfolio h1 { font-size: 2.8rem; }
+            .hero-portfolio .subtitle { font-size: 1.5rem; }
+            .hero-portfolio p { font-size: 1rem; }
+            
+            .filter-buttons { gap: 12px; margin-bottom: 50px; }
+            .filter-btn { padding: 11px 24px; font-size: 0.9rem; }
+            
             .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                padding: 0 25px;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 25px;
+                margin-bottom: 60px;
+            }
+        }
+
+        /* 📱 MOBILE (max-width: 640px) */
+        @media (max-width: 640px) {
+            .navbar-container { padding: 0 20px; }
+            .logo-text { font-size: 1.1rem; }
+            .logo-image { width: 40px; height: 40px; }
+            .back-btn { padding: 9px 20px; font-size: 0.85rem; }
+            
+            .hero-portfolio { padding: 0 20px; margin: 40px auto 25px; }
+            .hero-portfolio h1 { font-size: 2rem; }
+            .hero-portfolio .subtitle { font-size: 1.3rem; margin-bottom: 15px; }
+            .hero-portfolio p { font-size: 0.95rem; line-height: 1.7; margin-bottom: 30px; }
+            
+            .filter-buttons { gap: 10px; margin-bottom: 40px; }
+            .filter-btn { padding: 10px 20px; font-size: 0.85rem; }
+            
+            .portfolio-grid {
+                padding: 0 20px;
+                grid-template-columns: 1fr;
                 gap: 20px;
+                margin-bottom: 50px;
             }
-            .filter-buttons {
-                gap: 10px;
-            }
-            .filter-btn {
-                padding: 10px 20px;
-                font-size: 0.85rem;
-            }
+            
+            .portfolio-item { border-radius: 15px; }
+            .portfolio-overlay { padding: 20px; }
+            .portfolio-title { font-size: 1.15rem; }
+            .portfolio-category { font-size: 0.85rem; }
+            .portfolio-link-badge { font-size: 0.8rem; padding: 7px 14px; }
+            
+            footer { padding: 30px 15px; margin-top: 60px; }
+            footer p { font-size: 0.9rem; }
+            
+            .glow { width: 250px; height: 250px; filter: blur(70px); }
+        }
+
+        /* 📱 EXTRA SMALL MOBILE (max-width: 400px) */
+        @media (max-width: 400px) {
+            .hero-portfolio h1 { font-size: 1.7rem; }
+            .filter-btn { padding: 9px 16px; font-size: 0.8rem; }
+            .portfolio-grid { gap: 15px; }
         }
     </style>
 </head>

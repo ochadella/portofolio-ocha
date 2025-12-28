@@ -745,14 +745,192 @@
 
         footer p { margin: 8px 0; }
 
+        /* 🎯 HAMBURGER MENU */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: white;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* 📱 TABLET (max-width: 968px) */
         @media (max-width: 968px) {
-            .navbar-menu { display: none; }
-            .hero-content { padding: 40px 30px; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .content-grid, .about-grid { grid-template-columns: 1fr; }
-            .services-grid { grid-template-columns: 1fr; }
+            .hamburger { display: flex; }
+            
+            .navbar-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: linear-gradient(180deg, var(--dark-purple), var(--magenta));
+                flex-direction: column;
+                padding: 100px 40px 40px;
+                gap: 30px;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 25px rgba(0,0,0,0.3);
+            }
+            .navbar-menu.active { right: 0; }
+            .navbar-menu a {
+                font-size: 1.1rem;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .navbar-cta {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .navbar-container { padding: 0 25px; }
+            .navbar-content { padding: 15px 0; }
+            
+            .hero { padding: 0 25px 60px; margin-top: 30px; }
+            .hero-content { padding: 80px 30px 40px; border-radius: 30px; }
+            .hero-text h1 { font-size: 2.2rem; line-height: 1.3; }
+            .hero-text p { font-size: 0.95rem; line-height: 1.7; }
+            .hero-badge-left, .hero-badge-right { width: 80px; height: 80px; font-size: 0.65rem; padding: 12px; }
+            .hero-badge-left { top: 20px; left: 20px; }
+            .hero-badge-right { top: 20px; right: 20px; }
+            
+            .services-section { padding: 40px 25px; }
+            .services-header h2 { font-size: 2.2rem; }
+            .services-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+            
+            .content-section { padding: 0 25px; margin: 60px auto; }
+            .content-bubble { padding: 40px 30px; border-radius: 35px; }
+            .content-grid { 
+                grid-template-columns: 1fr; 
+                gap: 30px; 
+            }
+            .content-image { height: 300px; }
+            
+            .about-section { padding: 40px 25px; }
+            .about-grid { 
+                grid-template-columns: 1fr; 
+                gap: 40px; 
+            }
+            .about-content { padding: 35px; }
+            .about-image { height: 350px; }
+            
+            .contact-section { padding: 40px 25px; }
+            .contact-container { padding: 40px 30px; }
             .contact-logos { gap: 35px; }
             .contact-logo-link img { width: 60px; height: 60px; }
+            
+            .cv-section .cv-container { padding: 40px 30px; }
+        }
+
+        /* 📱 MOBILE (max-width: 640px) */
+        @media (max-width: 640px) {
+            .top-banner { font-size: 0.8rem; padding: 10px 15px; }
+            
+            .logo-text { font-size: 1.1rem; }
+            .logo-image { width: 40px; height: 40px; }
+            
+            .hero { padding: 0 20px 50px; margin-top: 25px; }
+            .hero-content { padding: 70px 25px 35px; border-radius: 25px; }
+            .hero-text h1 { font-size: 1.8rem; }
+            .hero-text .handwriting { font-size: 1.1rem; }
+            .hero-text p { font-size: 0.9rem; }
+            .hero-badge-left, .hero-badge-right { 
+                width: 65px; 
+                height: 65px; 
+                font-size: 0.55rem; 
+                padding: 10px;
+            }
+            .hero-badge-left { top: 15px; left: 15px; }
+            .hero-badge-right { top: 15px; right: 15px; }
+            
+            .services-section { padding: 35px 20px; margin: 60px auto; }
+            .services-header { margin-bottom: 40px; }
+            .services-header h2 { font-size: 1.8rem; }
+            .service-card { padding: 40px 25px; border-radius: 25px; }
+            .service-badge { width: 65px; height: 65px; font-size: 1.6rem; top: -12px; }
+            .service-card h3 { font-size: 1.2rem; margin: 25px 0 12px; }
+            .service-card h4 { font-size: 1.3rem; }
+            .service-card p { font-size: 0.9rem; margin-bottom: 20px; }
+            .service-cta { padding: 11px 25px; font-size: 0.9rem; }
+            
+            .content-section { padding: 0 20px; margin: 50px auto; }
+            .content-bubble { padding: 35px 25px; border-radius: 30px; }
+            .content-bubble h2 { font-size: 1.7rem; }
+            .content-bubble .handwriting { font-size: 1.3rem; }
+            .content-text p { font-size: 0.95rem; line-height: 1.8; }
+            .content-image { height: 250px; border-radius: 20px; }
+            .content-sticker { 
+                width: 80px; 
+                height: 100px; 
+                font-size: 0.75rem; 
+                padding: 12px;
+                top: -15px;
+                left: -15px;
+            }
+            
+            .about-section { padding: 35px 20px; margin: 60px auto; }
+            .about-content { padding: 30px 25px; border-radius: 25px; }
+            .about-greeting { padding: 10px 22px; font-size: 1.1rem; }
+            .about-content h2 { font-size: 1.6rem; }
+            .about-content p { font-size: 0.95rem; line-height: 1.8; }
+            .about-image { height: 300px; border-radius: 25px; }
+            .about-label { 
+                font-size: 1.2rem; 
+                padding: 8px 15px; 
+                top: -15px;
+                left: -15px;
+            }
+            
+            .contact-section { padding: 35px 20px; margin: 60px auto; }
+            .contact-container { padding: 35px 25px; border-radius: 30px; }
+            .contact-container h2 { font-size: 2rem; }
+            .contact-container p { font-size: 1rem; margin-bottom: 35px; }
+            .contact-logos { gap: 30px; }
+            .contact-logo-link img { width: 55px; height: 55px; }
+            
+            .cv-section { padding: 35px 20px; margin: 60px auto; }
+            .cv-container { padding: 35px 25px; border-radius: 30px; }
+            .cv-container h2 { font-size: 2rem; }
+            .cv-container p { font-size: 0.95rem; margin-bottom: 30px; }
+            .cv-download-btn { padding: 14px 35px; font-size: 1rem; }
+            
+            footer { padding: 30px 15px; margin-top: 60px; }
+            footer p { font-size: 0.9rem; }
+            
+            .glow { width: 250px; height: 250px; filter: blur(70px); }
+            .glow.cream, .glow.cream-two, .glow.cream-three { 
+                width: 280px; 
+                height: 280px; 
+                filter: blur(50px); 
+            }
+        }
+
+        /* 📱 EXTRA SMALL MOBILE (max-width: 400px) */
+        @media (max-width: 400px) {
+            .hero-text h1 { font-size: 1.5rem; }
+            .services-header h2 { font-size: 1.6rem; }
+            .content-bubble h2 { font-size: 1.5rem; }
+            .navbar-menu { width: 100%; right: -100%; }
+            .contact-container h2, .cv-container h2 { font-size: 1.8rem; }
         }
 
         .logo-image, .hero-badge-left, .hero-badge-right, .about-image { 
@@ -786,12 +964,17 @@
                     <div class="logo-image"><img src="/images/logonavbar.png" alt="Logo"></div>
                     <div class="logo-text">Portfolio Ocha</div>
                 </a>
-                <ul class="navbar-menu">
-                    <li><a href="#cv">CV</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#contact" class="navbar-cta">WORK WITH ME</a></li>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="navbar-menu" id="navbarMenu">
+                    <li><a href="#cv" class="nav-link">CV</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#contact" class="navbar-cta nav-link">WORK WITH ME</a></li>
                 </ul>
             </div>
         </div>
@@ -914,6 +1097,33 @@
     </footer>
 
     <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navbarMenu = document.getElementById('navbarMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navbarMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking nav links
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navbarMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navbarMenu.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navbarMenu.classList.remove('active');
+            }
+        });
+        
+        // Navbar hide on scroll
         let lastScroll = 0;
         const navbar = document.querySelector('.navbar');
         window.addEventListener('scroll', function() {
