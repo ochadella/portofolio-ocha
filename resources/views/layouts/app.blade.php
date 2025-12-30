@@ -1062,7 +1062,7 @@
         <div class="cv-container">
             <h2>📄 My Curriculum Vitae</h2>
             <p>Discover my educational background, skills, and professional experience.<br>Download my CV to learn more about my journey in creative media and informatics.</p>
-            <a href="https://drive.google.com/file/d/1rIex7Ycqhv1TgluQri4sfWVoP1RE8OoR/view?usp=sharing" download class="cv-download-btn">📥 VIEW CV</a>
+            <a href="https://drive.google.com/file/d/1hQm1NVPs7MEYZGyY7iEUw0nW9F1bj1Er/view?usp=sharing" download class="cv-download-btn">📥 VIEW CV</a>
         </div>
     </section>
 
