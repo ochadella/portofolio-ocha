@@ -430,32 +430,32 @@
     <div class="portfolio-grid" id="portfolioGrid">
         @php
             $portfolioItems = [
-                ['id' => 1, 'category' => 'poster', 'file' => 'design1.png', 'title' => 'Event Poster Design', 'cat_name' => 'Poster Design'],
+                ['id' => 1, 'category' => 'poster', 'file' => 'design1.png', 'title' => 'Announce Poster Design', 'cat_name' => 'Poster Design'],
                 ['id' => 2, 'category' => 'social', 'file' => 'design2.png', 'title' => 'Instagram Feed Layout', 'cat_name' => 'Social Media'],
-                ['id' => 3, 'category' => 'photo', 'file' => 'design3.jpg', 'title' => 'Product Photography', 'cat_name' => 'Photography'],
+                ['id' => 3, 'category' => 'photo', 'file' => 'design3.jpg', 'title' => 'Party Photography', 'cat_name' => 'Photography'],
                 ['id' => 4, 'category' => 'branding', 'file' => 'design4.png', 'title' => 'Brand Identity Design', 'cat_name' => 'Branding'],
                 ['id' => 5, 'category' => 'social', 'file' => 'design5.png', 'title' => 'Social Media Campaign', 'cat_name' => 'Social Media'],
-                ['id' => 6, 'category' => 'poster', 'file' => 'design6.jpg', 'title' => 'Concert Poster', 'cat_name' => 'Poster Design'],
-                ['id' => 7, 'category' => 'photo', 'file' => 'design7.jpg', 'title' => 'Portrait Session', 'cat_name' => 'Photography'],
-                ['id' => 8, 'category' => 'branding', 'file' => 'design8.png', 'title' => 'Logo & Branding Kit', 'cat_name' => 'Branding'],
+                ['id' => 6, 'category' => 'poster', 'file' => 'design6.jpg', 'title' => 'Urban Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 7, 'category' => 'photo', 'file' => 'design7.jpg', 'title' => 'Landscape Session', 'cat_name' => 'Photography'],
+                ['id' => 8, 'category' => 'branding', 'file' => 'design8.png', 'title' => 'Branding Kit', 'cat_name' => 'Branding'],
                 ['id' => 9, 'category' => 'social', 'file' => 'design9.png', 'title' => 'Instagram Story Template', 'cat_name' => 'Social Media'],
                 ['id' => 10, 'category' => 'photo', 'file' => 'design10.jpg', 'title' => 'Landscape Photography', 'cat_name' => 'Photography'],
-                ['id' => 11, 'category' => 'photo', 'file' => 'design11.jpg', 'title' => 'Street Photography', 'cat_name' => 'Photography'],
-                ['id' => 12, 'category' => 'photo', 'file' => 'design12.jpg', 'title' => 'Architecture Photography', 'cat_name' => 'Photography'],
-                ['id' => 13, 'category' => 'photo', 'file' => 'design13.jpg', 'title' => 'Nature Photography', 'cat_name' => 'Photography'],
-                ['id' => 14, 'category' => 'photo', 'file' => 'design14.jpg', 'title' => 'Urban Photography', 'cat_name' => 'Photography'],
+                ['id' => 11, 'category' => 'photo', 'file' => 'design11.jpg', 'title' => 'Random Photography', 'cat_name' => 'Photography'],
+                ['id' => 12, 'category' => 'photo', 'file' => 'design12.jpg', 'title' => 'Random Photography', 'cat_name' => 'Photography'],
+                ['id' => 13, 'category' => 'photo', 'file' => 'design13.jpg', 'title' => 'Landscape Photography', 'cat_name' => 'Photography'],
+                ['id' => 14, 'category' => 'photo', 'file' => 'design14.jpg', 'title' => 'Cinema Photography', 'cat_name' => 'Photography'],
                 ['id' => 15, 'category' => 'photo', 'file' => 'design15.jpg', 'title' => 'Lifestyle Photography', 'cat_name' => 'Photography'],
                 ['id' => 16, 'category' => 'photo', 'file' => 'design16.jpg', 'title' => 'Event Photography', 'cat_name' => 'Photography'],
-                ['id' => 17, 'category' => 'photo', 'file' => 'design17.jpg', 'title' => 'Fashion Photography', 'cat_name' => 'Photography'],
-                ['id' => 18, 'category' => 'photo', 'file' => 'design18.jpg', 'title' => 'Food Photography', 'cat_name' => 'Photography'],
-                ['id' => 19, 'category' => 'photo', 'file' => 'design19.jpg', 'title' => 'Travel Photography', 'cat_name' => 'Photography'],
-                ['id' => 20, 'category' => 'poster', 'file' => 'design20.png', 'title' => 'Music Festival Poster', 'cat_name' => 'Poster Design'],
-                ['id' => 21, 'category' => 'poster', 'file' => 'design21.png', 'title' => 'Movie Poster Design', 'cat_name' => 'Poster Design'],
-                ['id' => 22, 'category' => 'poster', 'file' => 'design22.png', 'title' => 'Exhibition Poster', 'cat_name' => 'Poster Design'],
-                ['id' => 23, 'category' => 'poster', 'file' => 'design23.png', 'title' => 'Concert Tour Poster', 'cat_name' => 'Poster Design'],
-                ['id' => 24, 'category' => 'poster', 'file' => 'design24.png', 'title' => 'Sports Event Poster', 'cat_name' => 'Poster Design'],
-                ['id' => 25, 'category' => 'poster', 'file' => 'design25.png', 'title' => 'Workshop Poster', 'cat_name' => 'Poster Design'],
-                ['id' => 26, 'category' => 'poster', 'file' => 'design26.png', 'title' => 'Campaign Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 17, 'category' => 'photo', 'file' => 'design17.jpg', 'title' => 'Street Photography', 'cat_name' => 'Photography'],
+                ['id' => 18, 'category' => 'photo', 'file' => 'design18.jpg', 'title' => 'Party Photography', 'cat_name' => 'Photography'],
+                ['id' => 19, 'category' => 'photo', 'file' => 'design19.jpg', 'title' => 'Street Photography', 'cat_name' => 'Photography'],
+                ['id' => 20, 'category' => 'poster', 'file' => 'design20.png', 'title' => 'Academic Competetion Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 21, 'category' => 'poster', 'file' => 'design21.png', 'title' => 'cover introduce mascot Design', 'cat_name' => 'Poster Design'],
+                ['id' => 22, 'category' => 'poster', 'file' => 'design22.png', 'title' => 'mascot design', 'cat_name' => 'Poster Design'],
+                ['id' => 23, 'category' => 'poster', 'file' => 'design23.png', 'title' => 'mascot filosofi Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 24, 'category' => 'poster', 'file' => 'design24.png', 'title' => 'Academic Competetion & Exploration Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 25, 'category' => 'poster', 'file' => 'design25.png', 'title' => 'Academic Competetion Poster', 'cat_name' => 'Poster Design'],
+                ['id' => 26, 'category' => 'poster', 'file' => 'design26.png', 'title' => 'Academic Competetion Poster', 'cat_name' => 'Poster Design'],
             ];
         @endphp
 
@@ -482,7 +482,7 @@
 
     <footer>
         <p><strong>✨ Let's create something beautiful together!</strong></p>
-        <p>📧 ocha.della@gmail.com | 📱 +62 812-3456-7890</p>
+        <p>📧 ochadella66@gmail.com | 📱 +62 821-4206-3367</p>
         <p>© 2025 Ocha Della - Graphic Designer & Informatika Student</p>
     </footer>
 

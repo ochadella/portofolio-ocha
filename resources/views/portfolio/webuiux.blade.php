@@ -447,7 +447,7 @@
                 ></iframe>
             </div>
             <div class="portfolio-overlay">
-                <div class="portfolio-title">Portfolio Website</div>
+                <div class="portfolio-title">RSHP Projek Website</div>
                 <div class="portfolio-category">Website Design</div>
                 <div class="portfolio-link-badge">
                     🌐 Visit Website
@@ -517,7 +517,7 @@
 
     <footer>
         <p><strong>✨ Let's create something beautiful together!</strong></p>
-        <p>📧 ocha.della@gmail.com | 📱 +62 812-3456-7890</p>
+        <p>📧 ochadella66@gmail.com | 📱 +62 821-4206-3367</p>
         <p>© 2025 Ocha Della - Graphic Designer & Informatika Student</p>
     </footer>
 

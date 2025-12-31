@@ -460,7 +460,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">Creative Transition Reel</div>
+                <div class="video-title">After Movie</div>
                 <div class="video-category">
                     Reels & Shorts
                     <span class="video-duration">2:00</span>
@@ -477,7 +477,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">Workshop Documentation</div>
+                <div class="video-title">Kartini EVENT </div>
                 <div class="video-category">
                     Event Videos
                     <span class="video-duration">2:00</span>
@@ -494,7 +494,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">Behind The Scenes - Photoshoot</div>
+                <div class="video-title">Poster Promotion</div>
                 <div class="video-category">
                     Reels & Shorts
                     <span class="video-duration">2:00</span>
@@ -511,7 +511,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">Conference Opening Video</div>
+                <div class="video-title">Research Video</div>
                 <div class="video-category">
                     Reels & Shorts
                     <span class="video-duration">2:00</span>
@@ -528,7 +528,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">Seminar Aftermovie</div>
+                <div class="video-title">Introduce </div>
                 <div class="video-category">
                     Reels & Shorts
                     <span class="video-duration">2:00</span>
@@ -545,7 +545,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">TikTok Viral Trend Edit</div>
+                <div class="video-title">Promotional & Brand</div>
                 <div class="video-category">
                     Reels & Shorts
                     <span class="video-duration">2:00</span>
@@ -562,7 +562,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">Tutorial Video Edit</div>
+                <div class="video-title">Transition Video Edit</div>
                 <div class="video-category">
                     Reels & Shorts
                     <span class="video-duration">2:00</span>
@@ -579,7 +579,7 @@
                 </div>
             </div>
             <div class="video-info">
-                <div class="video-title">Creative Content Reel</div>
+                <div class="video-title">Random Content Reel</div>
                 <div class="video-category">
                     Reels & Shorts
                     <span class="video-duration">2:00</span>
@@ -590,7 +590,7 @@
 
     <footer>
         <p><strong>✨ Let's create something beautiful together!</strong></p>
-        <p>📧 ocha.della@gmail.com | 📱 +62 812-3456-7890</p>
+        <p>📧 ochadella66@gmail.com | 📱 +62 821-4206-3367</p>
         <p>© 2025 Ocha Della - Graphic Designer & Informatika Student</p>
     </footer>
 
